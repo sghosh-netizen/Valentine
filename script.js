@@ -14,7 +14,7 @@ function yesClick() {
         You just made me incredibly happy 🥰<br>
         I can't wait to make more memories with you.
       </p>
-      <img src="images/PXL_20241019_100958843.RAW-01.COVER.jpg" alt="us together">
+      <img src="image/PXL_20241019_100958843.RAW-01.COVER.jpg" alt="us together">
       <h2>It's a date 😍</h2>
     </div>
   `;
