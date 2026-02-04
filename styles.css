@@ -6,89 +6,36 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: 'Comic Sans MS', cursive, sans-serif;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3p4OXF2aTB6b3AxNjU5Nm9yY3l1Y2xxMWtqcmJkMTNmY3doZXFyMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/S32fmyFcPDhuEEo4aP/giphy.gif") center center / cover no-repeat fixed;
-  position: relative;
-  overflow: hidden;
+
+  /* GIF BACKGROUND */
+  background: url("image/hearts-bg.gif") center center / cover no-repeat fixed;
 }
 
-/* Floating hearts */
-.hearts {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.heart {
-  position: absolute;
-  bottom: -50px;
-  background: red;
-  transform: rotate(45deg);
-  animation: floatUp linear infinite, beat 1.2s infinite;
-  opacity: 0.7;
-}
-
-.heart::before,
-.heart::after {
-  content: "";
-  position: absolute;
-  background: red;
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-}
-
-.heart::before {
-  top: -50%;
-  left: 0;
-}
-
-.heart::after {
-  left: -50%;
-  top: 0;
-}
-
-@keyframes floatUp {
-  from {
-    transform: translateY(0) rotate(45deg);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(-110vh) rotate(45deg);
-    opacity: 1;
-  }
-}
-
-@keyframes beat {
-  0%, 100% { transform: scale(1) rotate(45deg); }
-  50% { transform: scale(1.15) rotate(45deg); }
-}
-
-/* Card */
+/* Main card */
 .card {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   padding: 36px;
   border-radius: 22px;
-  text-align: center;
   width: 92%;
   max-width: 420px;
   min-height: 65vh;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-  animation: pop 0.8s ease;
+
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.95);
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  animation: pop 0.8s ease;
 }
 
 @keyframes pop {
   from { transform: scale(0.6); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  to   { transform: scale(1); opacity: 1; }
 }
 
 h1 {
@@ -98,6 +45,7 @@ h1 {
 
 h2 {
   font-size: 1.4rem;
+  margin-top: 10px;
 }
 
 p {
@@ -111,6 +59,10 @@ img {
   object-fit: cover;
   border-radius: 14px;
   margin: 15px 0;
+}
+
+.buttons {
+  margin-top: 10px;
 }
 
 button {
@@ -137,9 +89,11 @@ button {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.6);
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   z-index: 999;
 }
 
@@ -152,14 +106,24 @@ button {
   text-align: center;
 }
 
+.popup-content img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 15px 0;
+}
+
 .hidden {
   display: none;
 }
 
-/* Mobile */
+/* Mobile tuning */
 @media (max-width: 480px) {
   .card {
     padding: 40px 28px;
     min-height: 70vh;
+  }
+
+  button {
+    font-size: 18px;
   }
 }
