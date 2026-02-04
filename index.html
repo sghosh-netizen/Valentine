@@ -4,210 +4,16 @@
   <meta charset="UTF-8" />
   <title>Will You Be My Valentine? ❤️</title>
 
-  <!-- IMPORTANT for mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #ff4d6d;
-      position: relative;
-      overflow: hidden;
-      overflow: hidden;
-    }
-    
-    <div class="hearts"></div>
-    .hearts {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 0;
-    }
-    
-    .heart {
-      position: absolute;
-      bottom: -50px;
-      width: 20px;
-      height: 20px;
-      background: red;
-      transform: rotate(45deg);
-      animation: floatUp linear infinite, beat 1.2s infinite;
-      opacity: 0.7;
-    }
-    
-    .heart::before,
-    .heart::after {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: red;
-      border-radius: 50%;
-    }
-    
-    .heart::before {
-      top: -10px;
-      left: 0;
-    }
-    
-    .heart::after {
-      left: -10px;
-      top: 0;
-    }
-    
-    @keyframes floatUp {
-      from {
-        transform: translateY(0) rotate(45deg);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(-110vh) rotate(45deg);
-        opacity: 1;
-      }
-    }
-    
-    @keyframes beat {
-      0%, 100% { transform: scale(1) rotate(45deg); }
-      50% { transform: scale(1.15) rotate(45deg); }
-    }
-
-    .card {
-      background: white;
-      padding: 36px;
-      border-radius: 22px;
-      text-align: center;
-      width: 92%;
-      max-width: 420px;
-      min-height: 65vh;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-      animation: pop 0.8s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      z-index: 2;
-    }
-
-    h1 {
-      color: #ff4d6d;
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      margin: 15px 0;
-    }
-
-    p {
-      font-size: 1.05rem;
-      line-height: 1.5;
-    }
-
-    img {
-      width: 100%;
-      max-height: 220px;
-      object-fit: cover;
-      border-radius: 14px;
-      margin: 15px 0;
-    }
-
-    .buttons {
-      margin-top: 10px;
-    }
-
-    button {
-      padding: 14px 22px;
-      margin: 8px;
-      border: none;
-      border-radius: 30px;
-      font-size: 18px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    button:hover {
-      transform: scale(1.05);
-    }
-
-    .yes {
-      background: #ff4d6d;
-      color: white;
-    }
-
-    .no {
-      background: #e0e0e0;
-      color: #333;
-      position: absolute;
-    }
-
-    @keyframes pop {
-      from {
-        transform: scale(0.6);
-        opacity: 0;
-      }
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-    
-    .popup {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-  }
-  
-  .popup-content {
-    background: white;
-    padding: 25px;
-    border-radius: 20px;
-    width: 90%;
-    max-width: 350px;
-    text-align: center;
-    animation: pop 0.4s ease;
-  }
-  
-  .popup-content img {
-    width: 100%;
-    border-radius: 12px;
-    margin: 15px 0;
-  }
-
-.hidden {
-  display: none;
-}
-
-    /* Mobile fine-tuning */
-    @media (max-width: 480px) {
-      .card {
-        padding: 40px 28px;
-        min-height: 70vh;
-      }
-
-      button {
-        font-size: 18px;
-        padding: 14px 24px;
-      }
-    }
-  </style>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+
+  <!-- Floating hearts -->
+  <div class="hearts"></div>
 
   <div class="card">
     <div>
@@ -218,9 +24,8 @@
         every moment with you feels special 💕
       </p>
 
-      <!-- CHANGE THIS: meme or your photo -->
-       <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcG9jemZ2emphZGIyZzVneGJkNnR3NGRjdGtleHRjZzZyNWN6dWNqOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rwIhv4q1hNerNOQS3l/giphy.gif" alt="cute meme">
-      
+      <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcG9jemZ2emphZGIyZzVneGJkNnR3NGRjdGtleHRjZzZyNWN6dWNqOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rwIhv4q1hNerNOQS3l/giphy.gif" alt="cute meme">
+
       <h2>Will you be my Valentine? 🌹</h2>
     </div>
 
@@ -230,43 +35,6 @@
     </div>
   </div>
 
-  <script>
-    // Make NO button run away
-    function showError() {
-      document.getElementById("errorPopup").classList.remove("hidden");
-    }
-    
-    function closePopup() {
-      document.getElementById("errorPopup").classList.add("hidden");
-    }
-
-    // After YES click
-    function yesClick() {
-      document.body.innerHTML = `
-        <div class="card">
-          <h1>YAY ❤️</h1>
-          <p>
-            You just made me incredibly happy 🥰<br>
-            I can't wait to make more memories with you.
-          </p>
-          <img src="PXL_20241019_100958843.RAW-01.COVER.jpg" alt="us together">
-          <h2>It's a date 😍</h2>
-        </div>
-      `;
-    }
-    const heartsContainer = document.querySelector(".hearts");
-
-    for (let i = 0; i < 20; i++) {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = 5 + Math.random() * 5 + "s";
-      heart.style.opacity = Math.random();
-      heart.style.width = heart.style.height = 15 + Math.random() * 20 + "px";
-      heartsContainer.appendChild(heart);
-    }
-
-  </script>
   <!-- Error Popup -->
   <div id="errorPopup" class="popup hidden">
     <div class="popup-content">
@@ -277,5 +45,7 @@
     </div>
   </div>
 
+  <!-- External JS (IMPORTANT: at bottom) -->
+  <script src="script.js"></script>
 </body>
 </html>
