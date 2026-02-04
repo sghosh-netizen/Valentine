@@ -2,12 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Will You Be My Valentine? 💖</title>
+  <title>Will You Be My Valentine? ❤️</title>
+
+  <!-- IMPORTANT for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      height: 100vh;
-      font-family: 'Comic Sans MS', cursive;
+      min-height: 100vh;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,27 +31,53 @@
       width: 92%;
       max-width: 420px;
       min-height: 65vh;
-      box-sizing: border-box;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      animation: pop 0.8s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-
 
     h1 {
       color: #ff4d6d;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin: 15px 0;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.5;
     }
 
     img {
       width: 100%;
-      border-radius: 12px;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 14px;
       margin: 15px 0;
     }
 
+    .buttons {
+      margin-top: 10px;
+    }
+
     button {
-      padding: 12px 20px;
-      margin: 10px;
+      padding: 14px 22px;
+      margin: 8px;
       border: none;
-      border-radius: 25px;
-      font-size: 16px;
+      border-radius: 30px;
+      font-size: 18px;
       cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
     }
 
     .yes {
@@ -52,43 +86,80 @@
     }
 
     .no {
-      background: #ddd;
+      background: #e0e0e0;
+      color: #333;
       position: absolute;
     }
 
     @keyframes pop {
-      from { transform: scale(0.5); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+      from {
+        transform: scale(0.6);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Mobile fine-tuning */
+    @media (max-width: 480px) {
+      .card {
+        padding: 40px 28px;
+        min-height: 70vh;
+      }
+
+      button {
+        font-size: 18px;
+        padding: 14px 24px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <div class="card">
-    <h1>Hey ❤️</h1>
-    <p>I have an important question…</p>
+    <div>
+      <h1>Hey ❤️</h1>
 
-    <!-- Meme Image -->
-    <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcG9jemZ2emphZGIyZzVneGJkNnR3NGRjdGtleHRjZzZyNWN6dWNqOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rwIhv4q1hNerNOQS3l/giphy.gif" alt="cute meme">
+      <p>
+        From random conversations to endless laughs,<br>
+        every moment with you feels special 💕
+      </p>
 
-    <h2>Will you be my Valentine? 🌹</h2>
+      <!-- CHANGE THIS: meme or your photo -->
+      <img id="mainImage" src="meme1.gif" alt="cute meme">
+      
+      <h2>Will you be my Valentine? 🌹</h2>
+    </div>
 
-    <button class="yes" onclick="yesClick()">YES 💕</button>
-    <button class="no" onmouseover="moveNo(this)">NO 😒</button>
+    <div class="buttons">
+      <button class="yes" onclick="yesClick()">YES 💖</button>
+      <button class="no" onmouseover="moveNo(this)">NO 😒</button>
+    </div>
   </div>
 
   <script>
+    // Make NO button run away
     function moveNo(btn) {
-      btn.style.top = Math.random() * window.innerHeight + 'px';
-      btn.style.left = Math.random() * window.innerWidth + 'px';
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      btn.style.left = x + "px";
+      btn.style.top = y + "px";
     }
 
+    // After YES click
     function yesClick() {
       document.body.innerHTML = `
         <div class="card">
-          <h1>YAYYYY 😍</h1>
-          <p>You just made me the happiest person 💖</p>
-          <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+          <h1>YAY ❤️</h1>
+          <p>
+            You just made me incredibly happy 🥰<br>
+            I can't wait to make more memories with you.
+          </p>
+          <img src="photo2.jpg" alt="us together">
+          <h2>It's a date 😍</h2>
         </div>
       `;
     }
