@@ -9,7 +9,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("image/hearts-bg.gif") center center / cover no-repeat fixed;
+  background: url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3p4OXF2aTB6b3AxNjU5Nm9yY3l1Y2xxMWtqcmJkMTNmY3doZXFyMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/S32fmyFcPDhuEEo4aP/giphy.gif") center center / cover no-repeat fixed;
   position: relative;
   overflow: hidden;
 }
