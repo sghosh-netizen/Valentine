@@ -101,6 +101,36 @@
         opacity: 1;
       }
     }
+    
+    .popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 350px;
+    text-align: center;
+    animation: pop 0.4s ease;
+  }
+  
+  .popup-content img {
+    width: 100%;
+    border-radius: 12px;
+    margin: 15px 0;
+  }
+
+.hidden {
+  display: none;
+}
 
     /* Mobile fine-tuning */
     @media (max-width: 480px) {
@@ -136,17 +166,18 @@
 
     <div class="buttons">
       <button class="yes" onclick="yesClick()">YES 💖</button>
-      <button class="no" onmouseover="moveNo(this)">NO 😒</button>
+      <button class="no" onclick="showError()">NO 😒</button>
     </div>
   </div>
 
   <script>
     // Make NO button run away
-    function moveNo(btn) {
-      const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 50);
-      btn.style.left = x + "px";
-      btn.style.top = y + "px";
+    function showError() {
+      document.getElementById("errorPopup").classList.remove("hidden");
+    }
+    
+    function closePopup() {
+      document.getElementById("errorPopup").classList.add("hidden");
     }
 
     // After YES click
@@ -164,6 +195,15 @@
       `;
     }
   </script>
+  <!-- Error Popup -->
+  <div id="errorPopup" class="popup hidden">
+    <div class="popup-content">
+      <h2>😑</h2>
+      <p>You’re not allowed to click NO</p>
+      <img src="IMG-20260102-WA0017.jpg" alt="error meme">
+      <button onclick="closePopup()">Okay 😌</button>
+    </div>
+  </div>
 
 </body>
 </html>
