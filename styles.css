@@ -83,6 +83,7 @@ body {
   justify-content: space-between;
   position: relative;
   z-index: 2;
+  background: rgba(255, 255, 255, 0.95);
 }
 
 @keyframes pop {
