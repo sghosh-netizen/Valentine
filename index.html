@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Will You Be My Valentine? 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: 'Comic Sans MS', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: pop 1s ease;
+    }
+
+    h1 {
+      color: #ff4d6d;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 15px 0;
+    }
+
+    button {
+      padding: 12px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .no {
+      background: #ddd;
+      position: absolute;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Hey ❤️</h1>
+    <p>I have an important question…</p>
+
+    <!-- Meme Image -->
+    <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="cute meme">
+
+    <h2>Will you be my Valentine? 🌹</h2>
+
+    <button class="yes" onclick="yesClick()">YES 💕</button>
+    <button class="no" onmouseover="moveNo(this)">NO 😒</button>
+  </div>
+
+  <script>
+    function moveNo(btn) {
+      btn.style.top = Math.random() * window.innerHeight + 'px';
+      btn.style.left = Math.random() * window.innerWidth + 'px';
+    }
+
+    function yesClick() {
+      document.body.innerHTML = `
+        <div class="card">
+          <h1>YAYYYY 😍</h1>
+          <p>You just made me the happiest person 💖</p>
+          <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
