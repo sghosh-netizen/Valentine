@@ -38,6 +38,6 @@ function yesClick() {
       </div>
     `;
 
-  }, 1200);
+  }, 2000);
 }
 
