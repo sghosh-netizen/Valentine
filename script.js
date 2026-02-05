@@ -28,7 +28,7 @@ function yesClick() {
 
     document.body.innerHTML = `
       <div class="card">
-        <h1>YAY ❤️</h1>
+        <h1>❤️ YAY ❤️</h1>
         <p>
           You just made me incredibly happy 🥰<br>
           I can't wait to make more memories with you.
